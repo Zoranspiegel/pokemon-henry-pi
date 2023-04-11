@@ -1,10 +1,10 @@
 const { Router } = require("express");
 const router = Router();
 const mwSaveTypes = require('../middlewares/mwSaveTypes');
-const getApiPokemons = require('../controllers/getApiPokemons');
+const getPokemons = require('../controllers/getPokemons');
 const createPokemon = require('../controllers/createPokemon');
 
-router.get('/',mwSaveTypes, getApiPokemons);
+router.get('/',mwSaveTypes, getPokemons);
 
 router.post('/',mwSaveTypes, createPokemon);
 
