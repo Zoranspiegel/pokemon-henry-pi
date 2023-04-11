@@ -14,6 +14,10 @@ module.exports = (sequelize) => {
       allowNull: false,
       unique: false
     },
+    img: {
+      type: DataTypes.STRING,
+      defaultValue: 'https://pm1.narvii.com/5762/3f38ecfb4a23493049ca4ec365b17e74287d5e1d_hq.jpg'
+    },
     health: {
       type: DataTypes.INTEGER,
       defaultValue: 100,
