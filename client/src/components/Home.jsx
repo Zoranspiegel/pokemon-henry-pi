@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import StyledHome from './StyledHome';
 import Card from './Card';
 import { useSelector } from 'react-redux';
 
@@ -13,10 +13,3 @@ const Home = () => {
 };
 
 export default Home;
-
-const StyledHome = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  margin: 20px;
-  gap: 10px
-`;
