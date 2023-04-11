@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 const Navbar = () => {
   return (
     <StyledNavbar>
-      <NavLink exact activeClassName='aLink' className='link' to='/'>PoKeMock</NavLink>
+      <NavLink exact activeClassName='aLink' className='link' to='/'>PoKeMoCk</NavLink>
       <NavLink exact activeClassName='aLink' className='link' to='/create'>Create your own Pokemon!</NavLink>
     </StyledNavbar>
   );
