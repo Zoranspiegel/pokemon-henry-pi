@@ -2,6 +2,10 @@ import styled from 'styled-components';
 
 const StyledNavbar = styled.div`
   display: flex;
+  position: fixed;
+  top:-4px;
+  width: 100%;
+  border-bottom: 4px ridge white;
   justify-content: space-evenly;
   align-items: center;
   background-color: #c42424;
