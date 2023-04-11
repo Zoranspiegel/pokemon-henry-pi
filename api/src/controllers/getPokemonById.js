@@ -18,6 +18,7 @@ module.exports = async (req, res) => {
           }
         }]
       });
+      //Si la respuesta es null lanzo error al catch
       if (!dbPokemonById) throw new Error('Pokemon not found!')
       //Respuesta OK
       res.status(200).json(dbPokemonById);
