@@ -3,10 +3,10 @@ const { Pokemon, Type } = require('../db');
 const axios = require('axios');
 
 module.exports = async (req, res) => {
-  //Destructuro 'name' de 'req.query' y lo asigno en minúscula para que  la búsqueda sea 'case insensitive'
-  const name = req.query.name.toLowerCase();
   //Si llega la propiedad 'name' por query hago búsqueda por nombre, de lo contrario traigo todos los pokemons desde base de datos y API
-  if (name) {
+  if (req.query.name) {
+    //Destructuro 'name' de 'req.query' y lo asigno en minúscula para que  la búsqueda sea 'case insensitive'
+    const name = req.query.name.toLowerCase();
     try {
       ////DB
       //Empleo el método 'findAll' junto con el operador 'Op.like' de sequelize para buscar por nombre en base de datos y defino los atributos y relaciones con el modelo 'Type' para que la búsqueda coincida con el requerimiento del front
