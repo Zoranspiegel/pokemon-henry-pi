@@ -17,7 +17,7 @@ module.exports = async (req, res) => {
       return {
         id: r.data.id,
         name: r.data.name,
-        img: r.data.sprites.other['official-artwork'].front_default,
+        img: r.data.sprites.other.dream_world.front_default,
         types: r.data.types.map(t => {
           return { name: t.type.name };
         })

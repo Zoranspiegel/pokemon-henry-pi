@@ -36,11 +36,11 @@ module.exports = (sequelize) => {
     },
     height: {
       type: DataTypes.INTEGER,
-      defaultValue: 5
+      defaultValue: 10
     },
     weight: {
       type: DataTypes.INTEGER,
-      defaultValue: 40
+      defaultValue: 100
     }
   }, { timestamps: false });
 };
