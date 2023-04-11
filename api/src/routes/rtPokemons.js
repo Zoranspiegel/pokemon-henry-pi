@@ -6,7 +6,7 @@ const createPokemon = require('../controllers/createPokemon');
 const getPokemonById = require("../controllers/getPokemonById");
 
 router.get('/',mwSaveTypes, getPokemons);
-router.get('/:id', getPokemonById);
+router.get('/:id',mwSaveTypes, getPokemonById);
 
 router.post('/',mwSaveTypes, createPokemon);
 
