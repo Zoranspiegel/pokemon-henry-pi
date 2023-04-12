@@ -9,6 +9,7 @@ const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    console.log('App mounted');
     dispatch(getPokemons());
   }, []);
 

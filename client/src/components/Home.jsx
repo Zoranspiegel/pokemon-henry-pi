@@ -1,29 +1,25 @@
 import StyledHome from './StyledHome';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import Card from './Card';
 import Pagination from './Pagination';
 
 const Home = () => {
   const PER_PAGE = 10;
-  const pokemons = useSelector(state => state.pokemons);
-  const [homePokemons, setHomePokemons] = useState([]);
+  const [page, setPage] = useState(0);
+  const pokemons = useSelector(state => state.pokemons.slice((page * PER_PAGE), (page * PER_PAGE) + PER_PAGE));
 
-  useEffect(() => {
-    setHomePokemons(pokemons.slice(0, PER_PAGE));
-  }, [pokemons]);
-
-  const handlePagination = (page) => {
-    setHomePokemons(pokemons.slice((page * PER_PAGE), (page * PER_PAGE) + PER_PAGE));
+  const handlePage = (page) => {
+    setPage(page);
   };
 
   return (
     <StyledHome>
-      <Pagination handlePagination={handlePagination} perPage={PER_PAGE} />
+      <Pagination handlePage={handlePage} page={page} perPage={PER_PAGE} />
       <div className='cards'>
-        {homePokemons?.map(p => <Card key={p.id} pokemon={p} />)}
+        {pokemons?.map(p => <Card key={p.id} pokemon={p} />)}
       </div>
-      <Pagination handlePagination={handlePagination} />
+      <Pagination handlePage={handlePage} page={page} perPage={PER_PAGE} />
     </StyledHome>
   );
 };
