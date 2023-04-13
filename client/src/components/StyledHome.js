@@ -6,6 +6,45 @@ const StyledHome = styled.div`
   flex-direction: column;
   align-items: center;
   min-height: 100%;
+  .typeBtns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin: 10px 0;
+  }
+
+  .typeBtns button {
+    border: none;
+    border-radius: 6px;
+    padding: 5px 10px;
+    color: #c42424;
+    font-weight: 600;
+    box-shadow: 0 3px 0 #bbb;
+    user-select: none;
+    cursor: pointer;
+  }
+  
+  .typeBtns button:hover {
+    color: red;
+  }
+  
+  .typeBtns button:active {
+    transform: translateY(2px);
+    box-shadow: 0 1px 0 #999;    
+  }
+
+  .typeBtns .activeFilter {
+    color: white;
+    background-color: #c42424;
+    box-shadow: 0 1px 0 #a00;
+    transform: translateY(2px);
+  }
+
+  .typeBtns .activeFilter:hover {
+    color: #353535;
+  }
+
   .cards {
     display: flex;
     flex-wrap: wrap;
