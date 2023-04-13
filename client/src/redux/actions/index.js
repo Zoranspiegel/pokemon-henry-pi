@@ -5,6 +5,8 @@ export const ERROR_FETCH = 'ERROR_FETCH';
 export const GET_DETAILS = 'GET_DETAILS';
 export const CLEAN_DETAILS = 'CLEAN_DETAILS';
 export const TYPE_FILTER = 'TYPE_FILTER';
+export const SEARCH_NAME = 'SEARCH_NAME';
+export const CLEAR_SEARCH = 'CLEAR_SEARCH';
 
 export const getTypes = () => (dispatch) => {
   fetch('http://localhost:3001/types')
@@ -41,4 +43,17 @@ export const cleanDetails = () => {
 
 export const typeFilter = (filter) => {
   return { type: TYPE_FILTER, payload: filter };
+};
+
+export const searchName = (name) => (dispatch) => {
+  fetch(`http://localhost:3001/pokemons?name=${name}`)
+    .then(r => {
+      // if (!r.ok) throw new Error('No response from the site!');
+      return r.json();
+    })
+    .then(rJSON => dispatch({ type: SEARCH_NAME, payload: rJSON }));
+};
+
+export const clearSearch = () => {
+  return { type: CLEAR_SEARCH };
 };

@@ -4,13 +4,20 @@ import { useSelector, useDispatch } from 'react-redux';
 import { typeFilter, getTypes } from '../redux/actions';
 import Card from './Card';
 import Pagination from './Pagination';
+import SearchBar from './SearchBar';
 
 const Home = () => {
   const dispatch = useDispatch();
   const PER_PAGE = 10;
   const [page, setPage] = useState(0);
   const types = useSelector((state) => state.types);
-  const pokemons = useSelector((state) => state.pokemons.slice((page * PER_PAGE), (page * PER_PAGE) + PER_PAGE));
+  const pokemons = useSelector((state) => {
+    if (state.search.length) {
+      return state.search;
+    } else {
+      return state.pokemons.slice((page * PER_PAGE), (page * PER_PAGE) + PER_PAGE);
+    }
+  });
   const status = useSelector((state) => state.status);
   const filter = useSelector((state) => state.filter);
 
@@ -29,6 +36,7 @@ const Home = () => {
 
   return (
     <StyledHome>
+      <SearchBar />
       <div className='typeBtns'>
         {types?.map((t, i) =>
           <button

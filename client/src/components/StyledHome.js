@@ -11,7 +11,7 @@ const StyledHome = styled.div`
     flex-wrap: wrap;
     justify-content: center;
     gap: 8px;
-    margin: 10px 0;
+    margin: 20px 0;
   }
 
   .typeBtns button {

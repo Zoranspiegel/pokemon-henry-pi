@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 const StyledNavbar = styled.div`
+  z-index: 1000;
   display: flex;
   position: fixed;
   top:-4px;

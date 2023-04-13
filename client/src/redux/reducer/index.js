@@ -5,7 +5,9 @@ import {
   ERROR_FETCH,
   GET_DETAILS,
   CLEAN_DETAILS,
-  TYPE_FILTER
+  TYPE_FILTER,
+  SEARCH_NAME,
+  CLEAR_SEARCH
 } from '../actions';
 
 const initialState = {
@@ -14,6 +16,7 @@ const initialState = {
   pokemons: [],
   status: { loading: 'idle', error: null },
   details: {},
+  search: [],
   filter: 'all'
 };
 
@@ -48,6 +51,10 @@ const rootReducer = (state = initialState, action) => {
           })
         };
       }
+    case SEARCH_NAME:
+      return { ...state, search: action.payload };
+    case CLEAR_SEARCH:
+      return { ...state, search: [] };
     default:
       return { ...state };
   }

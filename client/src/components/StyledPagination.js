@@ -19,7 +19,7 @@ const StyledPagination = styled.div`
   }
   
   .activeBtn {
-    background-color: red;
+    background-color: #c42424;
     box-shadow: 0 2px 0 #700;
   }
 
