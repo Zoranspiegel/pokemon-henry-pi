@@ -20,7 +20,7 @@ const Pagination = ({ handlePage, page, perPage }) => {
 
   return (
     <StyledPagination>
-      {page > 0 && <button onClick={() => handlePage(page - 1)}>&#9664;</button>}
+      <button onClick={() => handlePage(page - 1)} style={{ visibility: page === 0 && 'hidden' }}>&#9664;</button>
       {pages?.map(p =>
         <button
           key={p}
@@ -30,7 +30,7 @@ const Pagination = ({ handlePage, page, perPage }) => {
           {p + 1}
         </button>
       )}
-      {page < pages.length - 1 && <button onClick={() => handlePage(page + 1)}>&#9654;</button>}
+      <button onClick={() => handlePage(page + 1)} style={{ visibility: page === pages.length - 1 && 'hidden' }}>&#9654;</button>
     </StyledPagination>
   );
 };

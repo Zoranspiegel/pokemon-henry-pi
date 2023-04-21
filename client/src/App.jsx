@@ -5,6 +5,7 @@ import { getPokemons } from './redux/actions';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Details from './components/Details';
+import Landing from './components/Landing';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -17,6 +18,9 @@ const App = () => {
   return (
     <div className='app'>
       <Navbar />
+      <Route exact path='/'>
+        <Landing />
+      </Route>
       <Route exact path='/home'>
         <Home />
       </Route>

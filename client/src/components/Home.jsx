@@ -8,7 +8,7 @@ import SearchBar from './SearchBar';
 
 const Home = () => {
   const dispatch = useDispatch();
-  const PER_PAGE = 10;
+  const PER_PAGE = 20;
   const [page, setPage] = useState(0);
   const types = useSelector((state) => state.types);
   const pokemons = useSelector((state) => {
