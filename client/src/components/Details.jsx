@@ -1,11 +1,17 @@
 import StyledDetails from './StyledDetails';
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { cleanDetails } from '../redux/actions';
+import { cleanDetails, getDetails } from '../redux/actions';
+import { useParams } from 'react-router-dom';
 
 const Details = () => {
+  const { id } = useParams();
   const dispatch = useDispatch();
   const details = useSelector(state => state.details);
+
+  useEffect(() => {
+    dispatch(getDetails(id));
+  }, []);
 
   useEffect(() => {
     return () => {

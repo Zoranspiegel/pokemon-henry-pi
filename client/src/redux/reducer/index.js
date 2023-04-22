@@ -23,7 +23,13 @@ const initialState = {
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_TYPES:
-      return { ...state, types: action.payload };
+      return {
+        ...state,
+        types: action.payload.filter(t => {
+          if (t.name === 'shadow' || t.name === 'unknown') return false;
+          else return true;
+        }).slice(0, 18)
+      };
     case PENDING_FETCH:
       return { ...state, status: { ...state.status, loading: 'pending' } };
     case GET_POKEMONS:

@@ -1,7 +1,7 @@
 import StyledHome from './StyledHome';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { typeFilter, getTypes } from '../redux/actions';
+import { typeFilter } from '../redux/actions';
 import Card from './Card';
 import Pagination from './Pagination';
 import SearchBar from './SearchBar';
@@ -20,10 +20,6 @@ const Home = () => {
   });
   const status = useSelector((state) => state.status);
   const filter = useSelector((state) => state.filter);
-
-  useEffect(() => {
-    dispatch(getTypes());
-  }, []);
 
   const handlePage = (page) => {
     setPage(page);
