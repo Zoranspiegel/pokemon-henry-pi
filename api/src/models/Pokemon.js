@@ -12,7 +12,7 @@ module.exports = (sequelize) => {
     name: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: false
+      unique: true
     },
     img: {
       type: DataTypes.STRING,
@@ -21,26 +21,50 @@ module.exports = (sequelize) => {
     health: {
       type: DataTypes.INTEGER,
       defaultValue: 100,
+      validate: {
+        min: 1,
+        max: 999
+      }
     },
     attack: {
       type: DataTypes.INTEGER,
       defaultValue: 50,
+      validate: {
+        min: 1,
+        max: 999
+      }
     },
     defense: {
       type: DataTypes.INTEGER,
-      defaultValue: 50
+      defaultValue: 50,
+      validate: {
+        min: 1,
+        max: 999
+      }
     },
     speed: {
       type: DataTypes.INTEGER,
-      defaultValue: 50
+      defaultValue: 50,
+      validate: {
+        min: 1,
+        max: 999
+      }
     },
     height: {
       type: DataTypes.INTEGER,
-      defaultValue: 10
+      defaultValue: 10,
+      validate: {
+        min: 1,
+        max: 9999
+      }
     },
     weight: {
       type: DataTypes.INTEGER,
-      defaultValue: 100
+      defaultValue: 100,
+      validate: {
+        min: 1,
+        max: 9999
+      }
     }
   }, { timestamps: false });
 };
