@@ -23,6 +23,7 @@ const Home = () => {
 
   const handlePage = (page) => {
     setPage(page);
+    window.scrollTo(0, 0);
   };
 
   const handleFilter = (type) => {
