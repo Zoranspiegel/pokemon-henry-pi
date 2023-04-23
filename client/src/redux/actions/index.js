@@ -7,6 +7,7 @@ export const CLEAN_DETAILS = 'CLEAN_DETAILS';
 export const TYPE_FILTER = 'TYPE_FILTER';
 export const SEARCH_NAME = 'SEARCH_NAME';
 export const CLEAR_SEARCH = 'CLEAR_SEARCH';
+export const SET_SORT = 'SET_SORT';
 
 export const getTypes = () => (dispatch) => {
   fetch('http://localhost:3001/types')
@@ -56,4 +57,8 @@ export const searchName = (name) => (dispatch) => {
 
 export const clearSearch = () => {
   return { type: CLEAR_SEARCH };
+};
+
+export const setSort = (sort) => {
+  return { type: SET_SORT, payload: sort };
 };

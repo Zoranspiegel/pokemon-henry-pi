@@ -6,6 +6,7 @@ import {
   GET_DETAILS,
   CLEAN_DETAILS,
   TYPE_FILTER,
+  SET_SORT,
   SEARCH_NAME,
   CLEAR_SEARCH
 } from '../actions';
@@ -17,7 +18,8 @@ const initialState = {
   status: { loading: 'idle', error: null },
   details: {},
   search: [],
-  filter: 'all'
+  filter: 'all',
+  sort: 'default'
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -57,6 +59,8 @@ const rootReducer = (state = initialState, action) => {
           })
         };
       }
+    case SET_SORT:
+      return { ...state, sort: action.payload };
     case SEARCH_NAME:
       return { ...state, search: action.payload };
     case CLEAR_SEARCH:

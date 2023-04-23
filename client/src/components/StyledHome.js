@@ -6,6 +6,7 @@ const StyledHome = styled.div`
   flex-direction: column;
   align-items: center;
   min-height: 100%;
+  padding: 0 30px;
   .typeBtns {
     display: flex;
     flex-wrap: wrap;
@@ -46,6 +47,39 @@ const StyledHome = styled.div`
     color: #353535;
   }
 
+  .sortBtns {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    left: 1vw;
+    top: 50vh;
+  }
+  .sortBtns button {
+    border: none;
+    border-radius: 20px;
+    background-color: yellow;
+    box-shadow: 0 3px 0 #880;
+    transform: rotate(270deg);
+    margin: 20px 0;
+    font-family: inherit;
+    font-weight: 800;
+    font-size: 15px;
+    color: #880;
+    cursor: pointer;
+  }
+  .sortBtns button:active {
+    box-shadow: 0 1px 0 #550;
+    transform: rotate(270deg) translateY(2px);
+  }
+  .sortBtns .activeSort {
+    background-color: #a00;
+    color: white;
+    box-shadow: 0 1px 0 #400;
+    transform: rotate(270deg) translateY(2px);
+  }
+  .sortBtns .activeSort:hover {
+    color: #300;
+  }
   .cards {
     display: flex;
     flex-wrap: wrap;

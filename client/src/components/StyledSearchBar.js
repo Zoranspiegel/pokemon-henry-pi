@@ -16,6 +16,7 @@ const StyledSearchBar = styled.div`
     background-color: #c42424;
     box-shadow: 0 4px 0 #500;
     color: #500;
+    padding-right: 10px;
     height: 22px;
     font-family: inherit;
     font-weight: 600;
