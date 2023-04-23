@@ -19,6 +19,7 @@ const StyledHome = styled.div`
     border-radius: 6px;
     padding: 5px 10px;
     color: #c42424;
+    font-family: inherit;
     font-weight: 600;
     box-shadow: 0 3px 0 #bbb;
     user-select: none;

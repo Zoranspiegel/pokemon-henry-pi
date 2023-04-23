@@ -10,20 +10,34 @@ const StyledSearchBar = styled.div`
   }
 
   button {
-    margin-left: 2px;
+    margin-left: 5px;
     border: none;
-    border-radius: 0 10px 10px 0;
+    border-radius: 2px 10px 10px 2px;
     background-color: #c42424;
-    box-shadow: 0 3px 0 #500;
+    box-shadow: 0 4px 0 #500;
     color: #500;
+    height: 22px;
+    font-family: inherit;
     font-weight: 600;
-    width: 30px;
+    transition: all 0.05s ease-in-out;
     cursor: pointer;
   }
 
+  button:hover {
+    color: white;
+  }
+
   button:active {
-    transform: translateY(2px);
+    transform: translateY(3px);
     box-shadow: 0 1px 0 #300;
+  }
+  
+  button:disabled {
+    background-color: #ddd;
+    transform: translateY(3px);
+    color: #aaa;
+    box-shadow: 0 1px 0 #aaa;
+    cursor: auto;
   }
 `;
 
